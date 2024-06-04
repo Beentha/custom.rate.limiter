@@ -11,11 +11,13 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface RateLimiter {
-
     int maximumNumberOfRequests() default 5;
-    long durationInMinutes() default 1;
-    String resource() default "DEFAULT";
-    CacheType cacheType() default CacheType.REDIS;
-    UserTokenType tokenType() default UserTokenType.IP;
 
+    long durationInMinutes() default 1;
+
+    String resource() default "DEFAULT";
+
+    CacheType cacheType() default CacheType.REDIS;
+
+    UserTokenType tokenType() default UserTokenType.IP;
 }
